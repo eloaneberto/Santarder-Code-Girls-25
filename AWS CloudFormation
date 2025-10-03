@@ -1,0 +1,31 @@
+O AWS CloudFormation é um serviço de Infraestrutura como Código (IaC) da AWS que permite provisionar e gerenciar recursos de nuvem de forma automatizada e consistente, usando arquivos em YAML ou JSON chamados templates.
+
+Conceitos principais
+
+Template: Arquivo que descreve os recursos da AWS (ex.: EC2, S3, VPC).
+
+Stack: Conjunto de recursos criados a partir de um template.
+
+Change Set: Prévia das alterações que serão aplicadas em uma stack antes da execução.
+
+Outputs: Informações exportadas pela stack (ex.: endpoint de um serviço).
+
+Benefícios
+
+Automação do provisionamento de ambientes.
+
+Padronização e reprodutibilidade em múltiplas contas e regiões.
+
+Controle de versão dos templates.
+
+Fácil rollback em caso de erro.
+
+Boas práticas
+
+Usar parâmetros para flexibilizar o template.
+
+Validar templates antes de aplicar (aws cloudformation validate-template).
+
+Versionar no Git para rastrear mudanças.
+
+Testar em ambientes de desenvolvimento antes de aplicar em produção.
