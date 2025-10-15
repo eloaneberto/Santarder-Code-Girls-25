@@ -1,0 +1,105 @@
+AWS Lambda
+1. Conceito Geral
+
+Serviço de computação serverless da AWS.
+
+Permite executar código sem precisar gerenciar servidores.
+
+A cobrança é feita somente pelo tempo de execução do código.
+
+Suporta diversas linguagens, como Python, Node.js, Java, Go e C#.
+
+2. Funcionamento
+
+O código é executado em resposta a eventos (exemplo: upload em um bucket S3, requisição HTTP via API Gateway, mensagem no SQS).
+
+Cada função Lambda tem um tempo máximo de execução (até 15 minutos).
+
+A AWS gerencia automaticamente o escalonamento (scale up/down) conforme a demanda.
+
+3. Componentes Principais
+
+Handler: Ponto de entrada da função (função principal que será executada).
+
+Evento: Dados que disparam a execução da função.
+
+Contexto: Informações adicionais fornecidas durante a execução (exemplo: tempo restante, ID da requisição).
+
+Camadas (Layers): Permitem reutilizar código comum em várias funções.
+
+4. Benefícios
+
+Não requer infraestrutura gerenciada.
+
+Escalabilidade automática.
+
+Baixo custo para workloads event-driven.
+
+Integração nativa com diversos serviços da AWS.
+
+5. Boas Práticas
+
+Manter funções pequenas e específicas.
+
+Usar variáveis de ambiente para configurações.
+
+Definir limites adequados de memória e tempo de execução.
+
+Monitorar logs e métricas via Amazon CloudWatch.
+
+Utilizar IAM Roles com permissões mínimas necessárias.
+
+
+
+Amazon S3 (Simple Storage Service)
+1. Conceito Geral
+
+Serviço de armazenamento de objetos escalável e durável da AWS.
+
+Ideal para armazenar arquivos, backups, logs, imagens e dados estáticos.
+
+Cada arquivo é armazenado em um bucket.
+
+2. Estrutura
+
+Bucket: Contêiner onde os objetos são armazenados.
+
+Objeto: Arquivo propriamente dito, identificado por uma chave única (key).
+
+Região: Cada bucket é criado em uma região específica da AWS.
+
+Metadados: Informações associadas a cada objeto (exemplo: tipo de conteúdo, data de modificação).
+
+3. Recursos e Funcionalidades
+
+Versionamento: Mantém várias versões de um mesmo arquivo.
+
+Criptografia: Protege dados em repouso (SSE-S3, SSE-KMS).
+
+Controle de acesso: Feito por políticas de bucket e IAM.
+
+Eventos: Podem acionar funções Lambda, SNS ou SQS.
+
+Classes de armazenamento: Diferentes opções de custo e disponibilidade (exemplo: Standard, Intelligent-Tiering, Glacier).
+
+4. Benefícios
+
+Alta durabilidade (99,999999999%).
+
+Escalabilidade praticamente ilimitada.
+
+Integração com múltiplos serviços da AWS.
+
+Baixo custo e simplicidade de uso.
+
+5. Boas Práticas
+
+Aplicar políticas de acesso restritivas (Principle of Least Privilege).
+
+Habilitar versionamento e logging quando necessário.
+
+Utilizar S3 Lifecycle Rules para movimentar dados entre classes de armazenamento.
+
+Configurar replicação entre regiões para alta disponibilidade.
+
+Habilitar S3 Block Public Access para evitar exposição indevida.
